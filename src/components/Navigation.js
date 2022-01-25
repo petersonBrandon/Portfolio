@@ -1,21 +1,29 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 import '../styles/Navigation.css'
+import NavBtns from './NavBtns';
 
-import { switchActivePage } from '../redux/redux-actions/windowActions';
+const Navigation = () => { 
+    const [isChecked, setChecked] = useState(false); 
 
-const Navigation = () => {
-    const className = "navBtn";
-    const dispatch = useDispatch();
+    const handleClick = () => {
+        setChecked(!isChecked);
+    }
 
     return (
-    <nav className='navBar'>
-        <button className={className} onClick={() => dispatch(switchActivePage(0))}>Home</button>
-        <button className={className} onClick={() => dispatch(switchActivePage(1))}>About Me</button>
-        <button className={className} onClick={() => dispatch(switchActivePage(2))}>Skills</button>
-        <button className={className} onClick={() => dispatch(switchActivePage(3))}>Projects</button>
-        <button className={className} onClick={() => dispatch(switchActivePage(4))}>Contact Info</button>
-    </nav>
+        <div className='navContainer'>
+            <nav className='navBar'>
+                <NavBtns />
+            </nav>
+            <div className='navMobile'>
+                <input type="checkbox" checked={isChecked} onClick={handleClick} />
+                <span></span>
+                <span></span>
+                <span></span>
+                <nav>
+                    <NavBtns checked={handleClick}/>
+                </nav>
+            </div>
+        </div>
     );
 };
 

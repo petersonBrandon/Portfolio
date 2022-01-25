@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     font-family: 'Share Tech Mono', monospace;
 }
 
@@ -34,14 +35,29 @@
 
 /* HOME PAGE */
 
-.home {
-    font-size: calc(5em + 2vw);
+.home h1 {
+    font-size: calc(2em + 2vw);
+    overflow: hidden;
+    border-right: 0.15em solid lawngreen;
+    width: clamp(300px, 50%, 1000px);
+    animation: typing 4s steps(44) 1s 1 normal both,
+        blinking 500ms steps(16) infinite normal;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blinking {
+    from { border-right-color: lawngreen; }
+    to { border-right-color: transparent; }
 }
 
 /* ABOUT PAGE */
 
 .about p {
-    width: clamp(300px, 50%, 1000px);
+    width: clamp(300px, 80%, 5000px);
 }
 
 /* SKILLS PAGE */
@@ -67,6 +83,25 @@
 
 /* CONTACT PAGE */
 
-.contact {
+.contactListContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: clamp(300px, 80%, 6000px);
+}
 
+@media only screen and (max-width: 900px) {
+    .window {
+        height: 100vh;
+    }
+
+    .active {
+        font-size: calc(1.25em + 1vw);
+    }
+
+    .home {
+        font-size: calc(0.5em + 2vw);
+    }
 }

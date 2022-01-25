@@ -5,7 +5,7 @@ import windowReducer from './windowReducer';
 
 const rootReducer = combineReducers({
     // TODO: Set all reducers
-    activeWindow: windowReducer
+    activeWindow: windowReducer,
 });
 
 export default rootReducer;

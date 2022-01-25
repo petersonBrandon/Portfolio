@@ -1,10 +1,10 @@
 import React from 'react';
 
-import '../styles/SkillCard.css';
+import '../styles/LogoCard.css';
 
-const SkillCard = (props) => {
+const LogoCard = (props) => {
     return (
-        <div className='skillCard'>
+        <div className='logoCard'>
             <a href={props.pageReference} target="_blank" rel="noopener noreferrer">
                 <img src={ props.imgSource } alt={ props.title } />
             </a>
@@ -12,4 +12,4 @@ const SkillCard = (props) => {
     );
 };
 
-export default SkillCard;
+export default LogoCard;

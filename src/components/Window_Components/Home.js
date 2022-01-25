@@ -6,7 +6,9 @@ const Home = () => {
 
     return (
         <div className={`window home ${ activeWindow[0] ? 'active' : 'inactive' }`}>
-            Brandon Peterson
+            <div className='typingContainer'>
+                <h1>Brandon Peterson</h1>
+            </div>
         </div>
     );
 };
