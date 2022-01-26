@@ -2,16 +2,9 @@
 
 .windows_container {
     width: 100%;
-    height: 100vh;
 }
 
 .window {
-    width: 100%;
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     font-family: 'Share Tech Mono', monospace;
 }
 
@@ -25,6 +18,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+    top: 6em;
+}
+
+@keyframes pageTransition {
+    from {
+        display: none;
+    } 
+    to { 
+        display: flex;
+    }
 }
 
 .title { 
@@ -33,7 +37,13 @@
     width: clamp(300px, 40%, 1000px);
 }
 
-/* HOME PAGE */
+/*********************************************************************************/
+/* HOME PAGE
+/*********************************************************************************/
+
+.home {
+    top: 8em;
+}
 
 .typingContainer {
     display: flex;
@@ -43,28 +53,91 @@
     text-align: left;
 }
 
-.typingContainer h1 {
-    font-size: calc(2em + 2vw);
-    overflow: hidden;
-    border-right: 0.10em solid lawngreen;
-    margin: 0;
-    white-space: nowrap;
-    position: relative;
-    animation: 
-        typing 2s steps(16) 0.5s 1 normal both,
-        blinking 500ms steps(16) infinite normal,
-        stopBlinking 500ms 3.7s forwards;
+.credContainer {
+    display: flex;
+    flex-direction: row;
 }
 
-.root {
+.credContainer p {
     margin: 0;
-    border-right: 0.1em solid transparent;
+}
+
+.rootStart0 {
+    border-right: 0.08em solid transparent;
     white-space: nowrap;
     position: relative;
     overflow: hidden;
     animation:
-        typing 2s steps(1) 2.2s 1 normal both,
-        blinking 500ms steps(7) 4s infinite normal;
+        typing 1s steps(1) 0.5s 1 normal both,
+        blinking 500ms steps(7) infinite normal,
+        stopBlinking 500ms 3s forwards;
+}
+
+.username {
+    border-right: 0.08em solid transparent;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    animation:
+        typing 2s steps(16) 3s 1 normal both,
+        blinking 500ms steps(7) 3s infinite normal,
+        stopBlinking 500ms 5.5s forwards;
+}
+
+.rootStart1 {
+    border-right: 0.08em solid transparent;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    animation:
+        typing 0.5s steps(1) 5.8s 1 normal both,
+        blinking 500ms steps(7) 5.7s infinite normal,
+        stopBlinking 500ms 8s forwards;
+}
+
+.password {
+    border-right: 0.08em solid transparent;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    animation:
+        typing 2s steps(10) 8s 1 normal both,
+        blinking 500ms steps(7) 8s infinite normal,
+        stopBlinking 500ms 11s forwards;
+}
+
+.welcome {
+    border-right: 0.08em solid transparent;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    animation:
+        typing 0.5s steps(7) 11.5s 1 normal both,
+        blinking 500ms steps(7) 11.5s infinite normal,
+        stopBlinking 500ms 12s forwards;
+}
+
+.typingContainer h1 {
+    font-size: calc(2em + 2vw);
+    margin: 0;
+    border-right: 0.08em solid transparent;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    animation: 
+        typing 0.5s steps(16) 12.5s 1 normal both,
+        blinking 500ms steps(7) 12.5s infinite normal,
+        stopBlinking 500ms 13s forwards;
+}
+
+.root {    
+    border-right: 0.08em solid transparent;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    animation:
+        typing 0.5s steps(1) 13.5s 1 normal both,
+        blinking 500ms steps(7) 13.5s infinite normal;
 }
 
 @keyframes typing {
@@ -82,17 +155,17 @@
     to { border-right-color: transparent; }
 }
 
-/* ABOUT PAGE */
+/*********************************************************************************/
+/* ABOUT PAGE
+/*********************************************************************************/
 
 .about p {
     width: clamp(300px, 80%, 5000px);
 }
 
-/* SKILLS PAGE */
-
-.skills h1 {
-    margin: 1em;
-}
+/*********************************************************************************/
+/* SKILLS PAGE
+/*********************************************************************************/
 
 .skillsListContainer {
     display: flex;
@@ -103,13 +176,22 @@
     width: clamp(300px, 80%, 6000px);
 }
 
-/* PROJECTS PAGE */
+/*********************************************************************************/
+/* PROJECTS PAGE
+/*********************************************************************************/
 
-.projects {
-
+.projectList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10vh;
 }
 
-/* CONTACT PAGE */
+/*********************************************************************************/
+/* CONTACT PAGE
+/*********************************************************************************/
 
 .contactListContainer {
     display: flex;
@@ -126,19 +208,26 @@
     align-items: center;
     border: 2px solid rgba(255, 255, 255, 0.301);
     border-radius: 20px;
+    margin: 20px;
+    height: 67px;
 }
 
 .emailContainer p {
     margin: 10px;
+    font-size: calc(0.1rem + 1vw);
 }
 
 .emailContainer button {
     border: none;
-    border-radius: 5px 17px 17px 5px;
+    border-radius: 0px 17px 17px 0px;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.301);
     font-family: 'Share Tech Mono', monospace;
     color: lawngreen;
+    font-size: calc(0.3rem + 1vw);
+    width: fit-content;
+    width: clamp(100px, 21%, 6000px);
+    height: 67px;
 
     transition-timing-function: ease;
     transition-duration: 0.5s;
@@ -152,20 +241,36 @@
     transition-duration: 0.5s;
 }
 
-@media only screen and (max-width: 900px) {
-    .window {
-        height: 100vh;
-    }
+/*********************************************************************************/
+/* MOBILE ADJUSTMENTS
+/*********************************************************************************/
 
+@media only screen and (max-width: 1100px) {
     .active {
         font-size: calc(1.25em + 1vw);
+        top: 3em;
     }
 
     .home {
         font-size: calc(0.5em + 2vw);
+        top: 15em;
     }
 
     .typingContainer {
         width: 93vw;
+    }
+
+    .emailContainer p {
+        font-size: calc(0.8rem + 1vw);
+    }
+    
+    .emailContainer button {
+        font-size: calc(0.8rem + 1vw);
+    }
+}
+
+@media only screen and (max-height: 450px) {
+    .home {
+        top: 3em;
     }
 }

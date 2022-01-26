@@ -5,22 +5,26 @@ import NavBtns from './NavBtns';
 const Navigation = () => { 
     const [isChecked, setChecked] = useState(false); 
 
-    const handleClick = () => {
+    const handleCheck = () => {
         setChecked(!isChecked);
+    }
+
+    const handleNonMobile = () => {
+        setChecked(false);
     }
 
     return (
         <div className='navContainer'>
             <nav className='navBar'>
-                <NavBtns />
+                <NavBtns handleCheck={handleNonMobile}/>
             </nav>
             <div className='navMobile'>
-                <input type="checkbox" checked={isChecked} onClick={handleClick} />
+                <input type="checkbox" checked={isChecked} onClick={handleCheck} />
                 <span></span>
                 <span></span>
                 <span></span>
                 <nav>
-                    <NavBtns checked={handleClick}/>
+                    <NavBtns handleCheck={handleCheck}/>
                 </nav>
             </div>
         </div>

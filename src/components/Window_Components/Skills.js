@@ -14,7 +14,7 @@ import pythonLogo from '../../images/python_logo.png';
 import expressLogo from '../../images/expressjs_logo.png';
 import vscode_logo from '../../images/vscode_logo.png';
 
-import LogoCard from '../LogoCard';
+import LogoCard from './LogoCard';
 
 const Skills = () => {
     const activeWindow = useSelector(state => state.activeWindow);

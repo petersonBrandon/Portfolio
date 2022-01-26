@@ -9,7 +9,7 @@ const NavBtn = (props) => {
 
     const handleClick = (num) => {
         dispatch(switchActivePage(num));
-        props.checked();
+        props.handleCheck();
     } 
 
     return (

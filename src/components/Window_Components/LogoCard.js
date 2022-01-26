@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../styles/LogoCard.css';
+import '../../styles/LogoCard.css';
 
 const LogoCard = (props) => {
     return (
