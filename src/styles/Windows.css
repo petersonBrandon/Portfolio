@@ -35,21 +35,49 @@
 
 /* HOME PAGE */
 
-.home h1 {
+.typingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 60vw;
+    text-align: left;
+}
+
+.typingContainer h1 {
     font-size: calc(2em + 2vw);
     overflow: hidden;
-    border-right: 0.15em solid lawngreen;
-    width: clamp(300px, 50%, 1000px);
-    animation: typing 4s steps(44) 1s 1 normal both,
-        blinking 500ms steps(16) infinite normal;
+    border-right: 0.10em solid lawngreen;
+    margin: 0;
+    white-space: nowrap;
+    position: relative;
+    animation: 
+        typing 2s steps(16) 0.5s 1 normal both,
+        blinking 500ms steps(16) infinite normal,
+        stopBlinking 500ms 3.7s forwards;
+}
+
+.root {
+    margin: 0;
+    border-right: 0.1em solid transparent;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    animation:
+        typing 2s steps(1) 2.2s 1 normal both,
+        blinking 500ms steps(7) 4s infinite normal;
 }
 
 @keyframes typing {
-    from { width: 0; }
+    from { width: 0%; }
     to { width: 100%; }
 }
 
 @keyframes blinking {
+    from { border-right-color: lawngreen; }
+    to { border-right-color: transparent; }
+}
+
+@keyframes stopBlinking {
     from { border-right-color: lawngreen; }
     to { border-right-color: transparent; }
 }
@@ -92,6 +120,38 @@
     width: clamp(300px, 80%, 6000px);
 }
 
+.emailContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.301);
+    border-radius: 20px;
+}
+
+.emailContainer p {
+    margin: 10px;
+}
+
+.emailContainer button {
+    border: none;
+    border-radius: 5px 17px 17px 5px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.301);
+    font-family: 'Share Tech Mono', monospace;
+    color: lawngreen;
+
+    transition-timing-function: ease;
+    transition-duration: 0.5s;
+}
+
+.emailContainer button:hover {
+    background-color: lawngreen;
+    color: black;
+
+    transition-timing-function: ease;
+    transition-duration: 0.5s;
+}
+
 @media only screen and (max-width: 900px) {
     .window {
         height: 100vh;
@@ -103,5 +163,9 @@
 
     .home {
         font-size: calc(0.5em + 2vw);
+    }
+
+    .typingContainer {
+        width: 93vw;
     }
 }
