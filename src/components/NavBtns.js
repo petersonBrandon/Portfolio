@@ -13,13 +13,13 @@ const NavBtn = (props) => {
     } 
 
     return (
-        <div>
+        <nav className={props.className}>
             <button className={className} onClick={() => handleClick(0)}>Home</button>
             <button className={className} onClick={() => handleClick(1)}>About Me</button>
             <button className={className} onClick={() => handleClick(2)}>Skills</button>
             <button className={className} onClick={() => handleClick(3)}>Projects</button>
             <button className={className} onClick={() => handleClick(4)}>Contact Info</button>
-        </div>
+        </nav>
     );
 };
 

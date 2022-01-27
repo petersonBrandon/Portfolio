@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { MdDone } from 'react-icons/md'
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import LogoCard from './LogoCard';
 
@@ -14,9 +15,9 @@ const Contact = () => {
     const activeWindow = useSelector(state => state.activeWindow);
     const email = "brandonacfuntech@gmail.com";
     const [isCopied, setCopied] = useState(false);
+    const textAreaRef = useRef(null);
 
-    const copy = async () => {
-        await navigator.clipboard.writeText(email);
+    const copy = () => {
         setCopied(true);
         setTimeout(() => {
             setCopied(false);
@@ -32,8 +33,10 @@ const Contact = () => {
                 <LogoCard title="GitHub" pageReference="https://github.com/petersonBrandon" imgSource={ gitHubLogo }/>
             </div>
             <div className='emailContainer'>
-                <p>{email}</p>
-                <button onClick={copy}>{isCopied ? <MdDone /> : 'Copy'}</button>
+                <p ref={textAreaRef}>{email}</p>
+                <CopyToClipboard text={email} onCopy={copy}>
+                    <button>{isCopied ? <MdDone /> : 'Copy'}</button>
+                </CopyToClipboard>
             </div>
         </div>
     );

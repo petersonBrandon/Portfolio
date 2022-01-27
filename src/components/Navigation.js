@@ -7,6 +7,7 @@ const Navigation = () => {
 
     const handleCheck = () => {
         setChecked(!isChecked);
+        console.log(isChecked);
     }
 
     const handleNonMobile = () => {
@@ -15,17 +16,13 @@ const Navigation = () => {
 
     return (
         <div className='navContainer'>
-            <nav className='navBar'>
-                <NavBtns handleCheck={handleNonMobile}/>
-            </nav>
+            <NavBtns className="navBar" handleCheck={handleNonMobile}/>
             <div className='navMobile'>
                 <input type="checkbox" checked={isChecked} onClick={handleCheck} />
                 <span></span>
                 <span></span>
                 <span></span>
-                <nav>
-                    <NavBtns handleCheck={handleCheck}/>
-                </nav>
+                <NavBtns handleCheck={handleCheck}/>
             </div>
         </div>
     );
