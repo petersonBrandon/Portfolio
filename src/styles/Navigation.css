@@ -54,8 +54,8 @@
     .hamburgerContainer {
         width: 100vw;
         background-color: black;
-        padding-top: 2vh;
-        padding-bottom: 2vh;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
     }
 
     .hamburger {
@@ -121,8 +121,7 @@
         height: 100vh;
         margin: -100px;
         background-color: rgb(14, 14, 14);
-        padding: 50px;
-        padding-top: 125px;
+        padding-top: 135px;
         list-style-type: none;
         top: 4vh;
         
