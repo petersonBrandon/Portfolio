@@ -18,6 +18,8 @@
 .projectCard h1 {
     margin: 20px;
     font-size: 45px;
+    height: 3.25em;
+    font-size: calc(0.70em + 1vw);
 }
 
 .projectCard a {
