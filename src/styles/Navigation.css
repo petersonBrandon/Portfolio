@@ -41,7 +41,6 @@
         flex-direction: column;
         align-items: center;
         top: 0vh;
-        width: 100vw;
         
         -webkit-user-select: none;
         user-select: none;
@@ -117,12 +116,10 @@
     {
         position: absolute;
         z-index: 0;
-        width: 100vw;
         height: 100vh;
         margin: -100px;
         background-color: rgb(14, 14, 14);
         padding-top: 135px;
-        list-style-type: none;
         top: 4vh;
         
         transform-origin: 0% 0%;
