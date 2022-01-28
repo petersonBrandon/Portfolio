@@ -17,7 +17,7 @@ const Navigation = () => {
     return (
         <div className='navContainer'>
             <NavBtns className="navBar" handleCheck={handleNonMobile}/>
-            <div className='col-lg-4 navMobile'>
+            <div className='navMobile'>
                 <input type="checkbox" checked={isChecked} onClick={handleCheck} />
                 <div className='hamburgerContainer'>
                     <div className={`hamburger  ${isChecked ? ' open' : ''}`} onClick={handleCheck}>
