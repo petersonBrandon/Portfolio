@@ -120,6 +120,7 @@
         margin: -100px;
         background-color: rgb(14, 14, 14);
         padding-top: 135px;
+        width: 100vw;
         top: 4vh;
         
         transform-origin: 0% 0%;
