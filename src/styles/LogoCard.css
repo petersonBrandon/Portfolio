@@ -5,10 +5,26 @@
 }
 
 .logoCard {
-    width: clamp(60px, 12%, 600px);
+    width: clamp(60px, 13%, 600px);
     padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.logoCard a {
+    width: clamp(60px, 90%, 600px);
+    margin: 10%;
+
+    transition-timing-function: ease;
+    transition-duration: 0.5s;
+}
+
+.logoCard a:hover {
+    width: clamp(60px, 100%, 600px);
+    margin: 0%;
+
+    transition-timing-function: ease;
+    transition-duration: 0.2s;
 }
