@@ -14,7 +14,7 @@ const Projects = () => {
         <div className={`window projects ${ activeWindow[3] ? 'active' : 'inactive' }`}>
             <h1 className='title'>Projects</h1>
             <div className='projectList'>
-                <ProjectCard title="Codex Blogging" imageSrc={codexImg} url="https://codexblog.herokuapp.com/"/>
+                <ProjectCard title="Codex" imageSrc={codexImg} url="https://codeberg.org/404neo/Codex"/>
                 <ProjectCard title="Calculator on React" imageSrc={calcImg} url="https://github.com/petersonBrandon/React-Calculator"/>
                 <ProjectCard title="Online D&D Character Sheet" imageSrc={dndImg} url="https://github.com/tygedavis/dragonsInfinity"/>
                 <ProjectCard title="This Portfolio" imageSrc={portfolioImg} url="https://github.com/petersonBrandon/Portfolio"/>
