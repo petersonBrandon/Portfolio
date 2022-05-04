@@ -1,9 +1,8 @@
 .navBtn {
     width: clamp(200px, 20%, 600px);
-    height: 10vh;
-    font-size: calc(1em + 1vw);
+    font-size: calc(0.5em + 1vw);
     font-family: 'Share Tech Mono', monospace;
-    padding: 1%;
+    padding: 10px;
     border: none;
     background-color: black;
     color: lawngreen;
@@ -22,7 +21,7 @@
 
 .navBar {
     position: fixed;
-    bottom: 0;
+    top: 0;
     width: 100%;
 }
 
